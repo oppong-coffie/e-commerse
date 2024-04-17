@@ -1,0 +1,21 @@
+#main {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 5%;
+}
+
+.description form {
+  margin: 20%;
+}
+.description h1 {
+  font-weight: 900;
+}
+.description p {
+  font-weight: 600;
+  color: rgb(2, 133, 104);
+}
+.product_image img{
+  width: 330px;
+  margin-top: -30px;
+}
