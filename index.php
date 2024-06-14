@@ -1,3 +1,40 @@
+<?php
+        // Start session
+        session_start();
+
+    if(isset($_POST["submit"])){
+        // Include db connection
+        include('./components/dbcon.php');
+
+        // Get the variables
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // SQL statement to select data
+        $sql = "SELECT * FROM users WHERE `email` = '$email' && `password` = '$password'";
+
+        $query = mysqli_query($dbcon, $sql);
+        
+        // Fetch user data
+        $row = mysqli_fetch_assoc($query);
+        if($row){
+            
+                // Set session variables
+                $_SESSION['id'] = $row['id'];
+
+                // Redirect to dashboard
+                header('Location: ./components/dashboard.php');
+            } else {
+                echo '
+                <script>
+                   alert("Incorrect username or password");
+            </script>';
+            }
+        
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +49,11 @@
     <div class="container">
         <div class="row">
             <div id="formarea" class="col-4 justify-content-center align-items-center">
-                <img  src="./images/chat.webp" alt="">
+                <img  src="./images/money-sack2.jpg" alt="">
                     <h3 class="text-secondary">Login</h3>
-                   
                     <!--START:: Login Forms -->
-                    <form class="form" action="./components/login.php" method="POST">
+                    <form class="form" action="" method="POST">
+                        <div id="error">ddd</div>
                         <div id="phone" class="shadow border">
                             <span class="fa fa-user"></span>
                             <input name="email" class="input" type="text">
@@ -27,13 +64,14 @@
                             <input name="password" class="input" type="text">
                         </div>
                         <br>
-                        <div id="submit" class="shadow border text-light">
-                            <button type="submit" name="submit">
-                                    <span class="fa fa-upload"></span>
-                            <span class="">submit</span>
-                            </button>
                         
+                        <div id="" class=" ">
+                            <input name="submit" class="input" type="submit"
+                            id="submit"
+                            value="Login">
                         </div>
+                       
+                       
                     </form>
                     <!--END:: Login Forms -->
 
@@ -47,14 +85,14 @@
             <div id="desc" class="col-6 text-light">
                 <div class="">
                     <h2>E - Commerce</h2>
-                <br><br>
-                <p>Lorem, ipsum dolor sit amet  <br>
-                    consectetur adipisicing elit. Earum reiciendis 
+              
+                <p><span class="out"> Lorem, ipsum dolor sit amet  <br>
+                    consectetur adipisicing elit. Earum reiciendis </span>
                     <br>saepe qui veniam tenetur laboriosam est, officia rem quidem, nisi quasi <br> cupiditate aspernatur
                      dolore corrupti reprehenderit numquam debitis eius culpa!</p>
                 </div>
 
-                <div class="mt-5">
+                <div class="">
                     Don't have account? <br>
                     <span class="btn btn-info" data-bs-toggle="modal" data-bs-target="#register">Register</span> 
                 </div>
