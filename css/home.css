@@ -39,3 +39,19 @@
     padding-right: 5%;
     padding-top: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+    .popular{
+        padding-left: 1%;
+        padding-right: 3%;
+        padding-top: 10px;
+        margin-top: 20px;
+    }
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns, each taking up an equal fraction of the available space */
+        row-gap: 30px;
+        column-gap: 30px;
+    }
+    
+}

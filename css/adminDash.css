@@ -1,0 +1,127 @@
+#col1{
+    background-color: rgb(83, 159, 2);
+}
+#col2{
+    background-color: rgb(113, 3, 239);
+}
+#col3{
+background-color: orangered;}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+gap: 5vh;
+}
+#col1, #col2, #col3{
+    height: 20vh;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+#product h1{
+    color: white;
+    margin-top: 10%;
+    font-weight: 900;
+}
+#product div{
+    color: rgb(192, 194, 195);
+}
+.product_logo{
+    width: 55%;
+}
+.customers_logo, .admin_logo{
+    width: 55%;
+    height: 85px;
+    border-radius: 100%;
+}
+.middle{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.items{
+    width: 70%;
+    height: 60vh;
+    overflow-y: scroll;
+    background-color: aliceblue;
+}
+.weather{
+    width: 30%;
+    padding-top: 35px;
+}
+.weather>img{
+    width: 100%;
+}
+.head1{
+    display: flex;
+    justify-content: space-between;
+}
+.head1 a{
+    font-size: 25px;
+}
+td{
+    margin-left: 25px;
+}
+#phone, #password{
+    border-radius: 20px;
+   padding-left: 5px;
+   }
+   #submit {
+       border-radius: 20px;
+   }
+   .input{
+       border: none;
+       width: 95%;
+       height: 40px;
+       border-radius: 20px;
+   }
+   #formarea{
+     background-color: white;
+     border-radius: 20px;
+     text-align: center;
+     border: 7px solid rgb(170, 15, 15);
+   }
+   #formarea>img{
+     width:100px;
+     border: 7px solid rgb(170, 15, 15);
+     height: 100px;
+     margin-top: -85px;
+     border-radius: 100%;
+   }
+   #desc{
+       text-align: center;
+       background-color: rgb(10, 131, 236);
+       border-radius: 10px;
+       margin-left: 180px;
+   }
+   #submit{
+       font-weight: bold;
+       font-size: 23px;
+       background-color: rgb(226, 2, 247);
+       text-align: center;
+       width: 100%;
+   }
+   #submit:hover{
+       font-size: 24px;
+       background-color: rgb(235, 52, 252);
+       color: rgb(99, 99, 99);
+   }
+   .form{
+       margin-top: 70px;
+   }
+   .signupform{
+       padding: 40px;
+   }
+   .signupinput{
+       border: none;
+       width: 100%;
+       height: 40px;
+       border-radius: 10px;
+   }
+   #register{
+       padding-left: 500px;
+   }
+   
+   table{
+    width: 100%;;
+   }

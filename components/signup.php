@@ -5,11 +5,13 @@
 
         // Get the variables
         $fullname = $_POST['name'];
+        $contact = $_POST['contact'];
+        $lotacion = $_POST['location'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
         //  SQL statement to insert data to table
-        $sql = "INSERT INTO users(`fullName`, `email`, `password`) VALUES('$fullname', '$email', '$password')";
+        $sql = "INSERT INTO users(`fullName`, `email`, `contact`, `location`, `password`) VALUES('$fullname', '$email', '$contact', '$lotacion', '$password')";
 
         // Prepare the statement
         $query = mysqli_query($dbcon, $sql);

@@ -42,21 +42,21 @@ $items = 0;
                 </thead>
                 <tbody>
                 <?php
-if(mysqli_num_rows($query_cart) > 0) {
-    while($row = mysqli_fetch_assoc($query_cart)) {
-        $total = $row['unit_price'] * $row['total_number'];
-        echo '
-            <tr>
-                <td><img src="../uploads/' . $row['image'] . '" alt="" width="100px"></td>
-                <td>' . $row['unit_price'] . '</td>
-                <td>' . $row['total_number'] . '</td>
-                <td>' . $total . '</td>
-            </tr>
-        ';
-        $alltotal +=$total;
-        $items +=1;
-    }
-}
+                    if(mysqli_num_rows($query_cart) > 0) {
+                        while($row = mysqli_fetch_assoc($query_cart)) {
+                            $total = $row['unit_price'] * $row['total_number'];
+                            echo '
+                                <tr>
+                                    <td><img src="../uploads/' . $row['image'] . '" alt="" width="100px"></td>
+                                    <td>' . $row['unit_price'] . '</td>
+                                    <td>' . $row['total_number'] . '</td>
+                                    <td>' . $total . '</td>
+                                </tr>
+                            ';
+                            $alltotal +=$total;
+                            $items +=1;
+                        }
+                    }
 ?>
 
                     
@@ -72,29 +72,58 @@ if(mysqli_num_rows($query_cart) > 0) {
                     </div>
                     <div class="t-items">
                         <div class="item-text">Shipping Fee</div>
-                        <div class="item-text">GHC 50.00</div>
+                        <div class="item-text">GHC 0.00</div>
                     </div>
                     <div class="t-items">
                         <div class="item-text">Processing</div>
-                        <div class="item-text">GHC 40.00</div>
+                        <div class="item-text">GHC 00.00</div>
                     </div>
                     <hr>
                     <div id="total" class="t-items">
                         <div class="item-text">TOTAL</div>
-                        <div class="item-text">GHC <?php echo $alltotal + 50 + 40 ?></div>
+                        <div class="item-text">GHC <?php echo $alltotal ?></div>
                     </div>
-                    <a href="./checkout.php?userid=<?php echo $userid ?>">
-                        <button id="pay" class="btn btn-info">CHECK OUT</button>
-                    </a>
+                    
+                    <button id="pay" class="btn btn-info" type="button" onclick="payWithPaystack()">Pay</button>
+                    <script src="https://js.paystack.co/v1/inline.js"></script>
                 </div>
             </div>
 
         </div>
-
-
-
-
     </div>
+    <hr>
+
+
+
+<script>
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_test_5ebeff1a4d5dfd19e99707748023aae504b5098b', // Your public test key
+      email: 'bcict20099@ttu.edu.gh', // Your customer email
+      amount: 1000000, // Amount in pesewas, so 10 GHS is 10000 pesewas
+      currency: 'GHS', // Currency code for Ghanaian Cedi
+      ref: 'VS' + Math.floor((Math.random() * 1000000000) + 1), // Generating a random reference
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "Mobile Number",
+                variable_name: "mobile_number",
+                value: "+233246414197"
+            }
+         ]
+      },
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+          window.location = "./verify_payment.php?ref="+response.reference;
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
+
 
 </body>
 

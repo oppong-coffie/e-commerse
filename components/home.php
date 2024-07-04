@@ -1,3 +1,16 @@
+<?php
+$category = "collections";
+    // Database connection
+    include('./dbcon.php');
+
+    // sql Statement
+    $sql = "SELECT * FROM products WHERE category='$category'";
+
+    // query
+    $query = mysqli_query($dbcon, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +46,9 @@
     <!-- END:: carousel -->
 
     <div id="same" class="bg-light shadow">
-        <div class="fs-5">Same day delivery on All National orders</div>
-        <div class="fs-5">Lorem elit. Quisquam illum.</div>
-        <div class="fs-5">Lorem ipsum dolor sit amet.</div>
+        <div class="fs-5">Same day delivery on All Nationals</div>
+        <div class="fs-5">Highest Discount on all items.</div>
+        <div class="fs-5">No shipping fee or delivery fee.</div>
     </div>
 
     <div class="deal">
@@ -164,109 +177,34 @@
     <!-- END:: Swiper -->
     
     <div class="popular">
-    <h2>Our Products</h2>
+    <h2>Quick Sale</h2>
     <div class="products">
 
 
-        <div class="item">
-            <img src="../images/aqua.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
+    <?php
+                if(mysqli_num_rows($query)>0){
+                    while($row = mysqli_fetch_assoc($query)){
+                    echo '
+                    <div class="item">
+                    <img src="../uploads/' . $row['p_image'] . '" alt="' . $row['product_name'] . '">
+                    <div class="desc">
+                    <div class="itemName">' . $row['product_name'] . '</div>
+                        <div id="price_add">
+                            <div class="itemprice text-secondary">GHC ' . $row['price'] . '</div>
+                            <a href="./dashboard.php?page=detail&product_id='. $row['id'] .'&category='.$category.'">
+                                <div class="btn btn-info">Add to cart</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>';
+                }
+                }
+                else{
+                    echo 'NO DATA FOUND';
+                }
+                ?>
 
-        
-        <div class="item">
-            <img src="../images/nintendo.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="item">
-            <img src="../images/Apogee.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/radio.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/headphone.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/com.jpg" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/camera.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/Amazon.png" alt="">
-            <div class="desc ">
-                <div class="">
-                    <div class="itemName">Aqua Broadcast</div>
-                    <div class="itemprice text-secondary">GHC 50.00</div>
-                </div>
-                <a href="">
-                    <div class="btn btn-info">Add to cart</div>
-                </a>
-            </div>
-        </div>
+
 
 
     </div>

@@ -19,3 +19,20 @@
   width: 330px;
   margin-top: -30px;
 }
+
+@media only screen and (max-width:768px) {
+  #main {
+    display: block;
+    padding: 0%;
+    text-align: center;
+  }
+  
+  .description form {
+    margin: 1%;
+  }
+
+  .product_image img{
+    width: 330px;
+    margin-top: -25px;
+  }
+}

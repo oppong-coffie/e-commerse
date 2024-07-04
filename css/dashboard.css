@@ -133,3 +133,55 @@ footer{
     text-align: center;
 }
 /* END::  footer */
+
+@media only screen and (max-width: 768px) {
+
+    /* Start:: navbar */
+    .logo{
+        font-size: 16px;
+    }
+
+    ul li a{
+        padding: 10px 8px;
+        font-size: 17px;
+    }
+ 
+    ul li ul.dropdown li{
+        margin: 2px, 0px;
+    }
+
+ #searchbar{
+    display: none;
+ }
+    /* END:: navbar */
+    
+    /* START:: Carousel */
+    .carousel-item img{
+        width: 100%;
+        height: 30vh;
+    }
+    
+    
+    /* START:: Swiper */
+    .control {
+        margin-top: 0px;
+    }
+    /* END:: Swiper */
+    
+    #same{
+        display: block;
+        padding-left: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .deal{
+        margin-top: 15px;
+    }
+    
+    /* START::  footer */
+    footer{
+        text-align: center;
+    }
+    /* END::  footer */
+}

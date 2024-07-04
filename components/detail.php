@@ -1,5 +1,6 @@
 <?php
     $product_id = $_GET['product_id'];
+    $category = $_GET['category'];
     echo $product_id;
     echo $userid;
  // Database connection
@@ -32,8 +33,8 @@
             <p>Be the first to impress the Society</p>
             <h1> GHC <?php echo $row['price'];?></h1>
             <hr>
-            <form action="./add_to_cart.php?product_id=<?php echo $product_id;?>&userid=<?php echo $userid;?>&price=<?php echo $row['price'];?>&p_image=<?php echo $row['p_image'];?>" method="POST">
-                <input name="total_number" type="number"> <br><br>
+            <form action="./add_to_cart.php?product_id=<?php echo $product_id;?>&userid=<?php echo $userid;?>&price=<?php echo $row['price'];?>&p_image=<?php echo $row['p_image'];?>&category=<?php echo $category; ?>" method="POST">
+                <input name="total_number" type="number" required> <br><br>
                 <button class="btn btn-info" type="submit" name="addToCart">Add to cart</button>
             </form>
 

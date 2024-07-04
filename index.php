@@ -53,7 +53,6 @@
                     <h3 class="text-secondary">Login</h3>
                     <!--START:: Login Forms -->
                     <form class="form" action="" method="POST">
-                        <div id="error">ddd</div>
                         <div id="phone" class="shadow border">
                             <span class="fa fa-user"></span>
                             <input name="email" class="input" type="text">
@@ -110,22 +109,20 @@
                     <form class="signupform" action="./components/signup.php" method="POST">
                         Full Name: <input name="name" class="signupinput shadow border" type="text">
                         Email: <input name="email" class="signupinput shadow border" type="text">
+                        Contact: <input name="contact" class="signupinput shadow border" type="text">
+                        Location: <input name="location" class="signupinput shadow border" type="text">
                         Password: <input name="password" class="signupinput shadow border" type="text"> 
                         Confirm Password: <input class="signupinput shadow border" type="text"><br><br>
 
-                        <div id="submit" class="shadow border text-light">
-                            <button type="submit" name="submit">
+                        <div id="submit" class="">
                                     <span class="fa fa-upload"></span>
                             <span class="">submit</span>
-                            </button>
                         
                         </div>
                     </form>
                 </div>
         </div>
      </div>
-    
-
 
     <script src="./Assets/fontawesome-5/js/all.js"></script>
     <script src="./Assets/bootstrap-5.3/js/bootstrap.js"></script>

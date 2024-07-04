@@ -23,7 +23,7 @@
     <!-- START:: Navbar -->
     <ul class="navbar">
         <li>
-            <div class="logo">HazelMarket</div>
+            <div class="logo">E-Market</div>
         </li>
         <li><a href="./dashboard.php">Home</a></li>
         <li>
@@ -33,7 +33,7 @@
                 <li><a href="./dashboard.php?page=products&category=collections">Collections</a></li>
             </ul>
         </li>
-        <li><a href="#"><input placeholder="Search for products, categories or shops" class="search" type="text"></a>
+        <li id="searchbar"><a href="#"><input placeholder="Search for products, categories or shops" class="search" type="text"></a>
         </li>
         <li><a class="text-secondary" href="./dashboard.php?page=cart">Cart</a></li>
         <li><a class="text-secondary" href="../index.html">Logout</a></li>
@@ -66,16 +66,16 @@
 
     <!-- START:: footer -->
     <footer class="bg-secondary pb-5 pt-5">
-        <h2>HazelMarket</h2>
+        <h2>E-Market</h2>
         <p>Takoradi</p>
         <p>hazelquayson@gmail.com</p>
         <p>+233 246 414 97</p>
 <hr>
         <div class="media">
-            <img class="rounded-circle" src="../images/ig2.png" width="60px" height="60px" alt="">
-            <img class="rounded-circle" src="../images/fb.jpg" width="60px" height="60px" alt="">
-            <img class="rounded-circle" src="../images/twitter.png" width="60px" height="60px" alt="">
-            <img class="rounded-circle" src="../images/whatsapp.png" width="60px" height="60px" alt="">
+            <img class="rounded-circle" src="../images/ig2.png" width="50px" height="50px" alt="">
+            <img class="rounded-circle" src="../images/fb.jpg" width="50px" height="50px" alt="">
+            <img class="rounded-circle" src="../images/twitter.png" width="50px" height="50px" alt="">
+            <img class="rounded-circle" src="../images/whatsapp.png" width="50px" height="50px" alt="">
         </div> 
         <h4>GET IN THOUCH</h4> 
     </footer>
